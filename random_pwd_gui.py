@@ -20,7 +20,7 @@ class pwd_app(ctk.CTk):
 		super().__init__(*args, **kwargs)
 
         # app title
-		self.title("Random Password Generator")
+		self.title("Local Password Generator")
 	
 		# geometry
 		self.geometry(f"{appWidth}x{appHeight}")
@@ -35,7 +35,7 @@ class pwd_app(ctk.CTk):
 		self.pwd = "";
 		
         # title label
-		self.title_label = ctk.CTkLabel(self, text="Random Password Generator", font=("Segoe UI", 25))
+		self.title_label = ctk.CTkLabel(self, text="Local Password Generator", font=("Segoe UI", 25))
 		self.title_label.pack(padx=10, pady=10)
         
         # password box
