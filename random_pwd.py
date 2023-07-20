@@ -10,18 +10,24 @@ symbol = "@#$!%^&*()[]{=}+-*~"
 pwd_len = 20;
 
 # options
-add_uppercase = True;
+add_uppercase = False;
 add_lowercase = True;
 add_number = True;
-add_symbol = True;
+add_symbol = False;
 
 # password initialization
 pwd = "";
 
+# option list
+option_list = [add_uppercase, add_lowercase, add_number, add_symbol]
+
+# options with "True" value
+true_option = [index for index, value in enumerate(option_list) if value]
+
 # password generation
 for i in range(pwd_len):
     # option 
-    option = random.randint(0, 3)
+    option = random.choice(true_option)
     match option:
         # 0 -> uppercase
         case 0:
@@ -37,4 +43,5 @@ for i in range(pwd_len):
             pwd += random.choice(symbol)
         case _:
             raise Exception("Invalid option!")
+        
 print(f"Password: {pwd}")
