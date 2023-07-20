@@ -78,7 +78,7 @@ class pwd_app(ctk.CTk):
 		self.option_sym.select()
 
 		# generate buttom
-		self.gen_buttom = ctk.CTkButton(self, text="Generate", command=self.pwd_generation)
+		self.gen_buttom = ctk.CTkButton(self, text="Generate", command=self.pwd_generation, font=("Segoe UI", 14))
 		self.gen_buttom.pack(padx=10, pady=10)
 				    
 	def slider_event(self, value):
