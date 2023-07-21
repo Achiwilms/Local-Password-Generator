@@ -20,12 +20,12 @@ python main.py
 ```
 2. An graphical user interface should appear. 
 
-![GUI](https://hackmd.io/_uploads/rJgfahvq2.png)
+![GUI](https://github.com/Achiwilms/Local_Password_Generator/blob/main/image/GUI.png?raw=true)
 
 
 3. Select the desired format and generate the password
 
-![GUI in operation](https://hackmd.io/_uploads/r199Rnwqh.png)
+![GUI in operation](https://github.com/Achiwilms/Local_Password_Generator/blob/main/image/GUI_working.png?raw=true)
 
 
 
