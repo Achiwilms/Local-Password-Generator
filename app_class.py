@@ -76,6 +76,9 @@ class pwd_app(ctk.CTk):
 		# generate buttom
 		self.gen_buttom = ctk.CTkButton(self, text="Generate", command=self.pwd_generation, font=("Segoe UI", 14))
 		self.gen_buttom.pack(padx=10, pady=10)
+		# generate password
+		self.pwd_generation()
+
 				    
 	def slider_event(self, value):
 		# update password length
