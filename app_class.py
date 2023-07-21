@@ -10,10 +10,6 @@ ctk.set_appearance_mode("Dark")
 # themes
 ctk.set_default_color_theme("blue")
 
-# geometry
-appWidth, appHeight = 720, 480
-
-
 # App Class
 class pwd_app(ctk.CTk):
 	def __init__(self, *args, **kwargs):
@@ -23,7 +19,7 @@ class pwd_app(ctk.CTk):
 		self.title("Local Password Generator")
 	
 		# geometry
-		self.geometry(f"{appWidth}x{appHeight}")
+		self.geometry("720x480")
 
 		# symbol initialization
 		self.symbol_string = "@#$!%^&*()[]{=}+-*~"
@@ -132,6 +128,3 @@ class pwd_app(ctk.CTk):
 		# print(f"Password: {self.pwd}")
 
 		return
-if __name__ == "__main__":
-	app = pwd_app()
-	app.mainloop()
