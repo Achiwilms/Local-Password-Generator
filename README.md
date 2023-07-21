@@ -1,8 +1,7 @@
 # Local Password Generator
-When it comes to ensuring the security of our online accounts, having a **strong password** is paramount. While **visiting an online website to  generate one** might seem like a convenient choice,  it can **pose potential risks to our security**. There's always the possibility that these websites may not be well-intentioned or be vulnerable to hacking attempts, putting our sensitive information at risk.
+When it comes to ensuring the security of our online accounts, having a **strong password** is paramount. While **visiting an online website to  generate one** seem like a convenient choice,  it can **pose potential risks to our security**. There's always a chance of these sites being malicious or vulnerable to hacking, jeopardizing our sensitive data.
 
-To safeguard our online presence effectively, it is wiser to **generate passwords locally**. **This program can assist you in accomplishing this objective**. Moreover, it offers a **user-friendly graphical interface**, allowing you to use it effortlessly without needing to enter commands repeatedly in the console. Hope you like it :smiley: 
-
+To safeguard our online presence effectively, it is wiser to **generate passwords locally**. **This program can assist you in accomplishing this objective**. Moreover, it offers a **user-friendly graphical interface**, allowing you to use it effortlessly. Hope you like it :smiley:
 
 ## Environment 
 
