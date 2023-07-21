@@ -51,25 +51,25 @@ class pwd_app(ctk.CTk):
 		self.option_font = ("Segoe UI", 15)
 		# option: Uppercase
 		self.add_uppercase = ctk.BooleanVar(value=True)
-		self.option_upc = ctk.CTkCheckBox(self, text="Uppercase", variable=self.add_uppercase, onvalue=True, offvalue=False, font = self.option_font)
+		self.option_upc = ctk.CTkCheckBox(self, text="Uppercase", variable=self.add_uppercase, onvalue=True, offvalue=False, font = self.option_font, command=self.pwd_generation)
 		self.option_upc.pack(padx=10, pady=10)
 		self.option_upc.select()
 
 		# option: Lowercase
 		self.add_lowercase = ctk.BooleanVar(value=True)
-		self.option_loc = ctk.CTkCheckBox(self, text="Lowercase", variable=self.add_lowercase, onvalue=True, offvalue=False, font = self.option_font)
+		self.option_loc = ctk.CTkCheckBox(self, text="Lowercase", variable=self.add_lowercase, onvalue=True, offvalue=False, font = self.option_font, command=self.pwd_generation)
 		self.option_loc.pack(padx=10, pady=10)
 		self.option_loc.select()
 
 		# option: Number
 		self.add_number = ctk.BooleanVar(value=True)
-		self.option_num = ctk.CTkCheckBox(self, text="Number", variable=self.add_number, onvalue=True, offvalue=False, font = self.option_font)
+		self.option_num = ctk.CTkCheckBox(self, text="Number", variable=self.add_number, onvalue=True, offvalue=False, font = self.option_font, command=self.pwd_generation)
 		self.option_num.pack(padx=10, pady=10)				
 		self.option_num.select()
 
 		# option: Symbol
 		self.add_symbol = ctk.BooleanVar(value=True)
-		self.option_sym = ctk.CTkCheckBox(self, text="Symbol", variable=self.add_symbol, onvalue=True, offvalue=False, font = self.option_font)
+		self.option_sym = ctk.CTkCheckBox(self, text="Symbol", variable=self.add_symbol, onvalue=True, offvalue=False, font = self.option_font, command=self.pwd_generation)
 		self.option_sym.pack(padx=10, pady=10)
 		self.option_sym.select()
 
@@ -83,6 +83,9 @@ class pwd_app(ctk.CTk):
 
 		# update password length label
 		self.pwd_len_label.configure(text = "Password Length: "+str(self.pwd_len), text_color="white", font=self.pwd_label_font)
+
+		# generate password
+		self.pwd_generation()
 		return
 
 	def pwd_generation(self):
