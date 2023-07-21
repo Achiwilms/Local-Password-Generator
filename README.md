@@ -19,12 +19,14 @@ pip install customtkinter
 python main.py
 ```
 2. An graphical user interface should appear. 
-<img src="https://github.com/Achiwilms/Local_Password_Generator/blob/main/image/GUI.png?raw=true" alt="GUI" width="400">
+<p align="center">
+    <img src="https://github.com/Achiwilms/Local_Password_Generator/blob/main/image/GUI.png?raw=true" alt="GUI" width="400">
+</p>
 
 3. Select the desired format and generate the password
+<p align="center">
 <img src="https://github.com/Achiwilms/Local_Password_Generator/blob/main/image/GUI_working.png?raw=true" alt="GUI in operation" width="400">
-
-
+</p>
 
 ## Contributing
 
