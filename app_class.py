@@ -129,8 +129,12 @@ class pwd_app(ctk.CTk):
 					self.pwd += random.choice(self.symbol_string)
 				case _:
 					raise Exception("Invalid option!")
+
 		# display password
 		self.pwd_box.insert("0.0", self.pwd)
 		# print(f"Password: {self.pwd}")
+
+		# display password length label (so that [ERROR] message won't persist)
+		self.pwd_len_label.configure(text = "Password Length: "+str(self.pwd_len), text_color="white", font=self.pwd_label_font)
 
 		return
