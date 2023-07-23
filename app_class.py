@@ -81,60 +81,58 @@ class pwd_app(ctk.CTk):
 
 				    
 	def slider_event(self, value):
-		# update password length
-		self.pwd_len = int(value);
-
-		# update password length label
-		self.pwd_len_label.configure(text = "Password Length: "+str(self.pwd_len), text_color="white", font=self.pwd_label_font)
-
-		# generate password
+		"""
+		Updates the password length based on the value of the slider.
+		
+		Parameters:
+			value (int): The value of the slider.
+		
+		Returns:
+			None
+		"""
+		self.pwd_len = int(value)
+		self.pwd_len_label.configure(
+			text="Password Length: " + str(self.pwd_len),
+			text_color="white",
+			font=self.pwd_label_font,
+		)
 		self.pwd_generation()
-		return
 
 	def pwd_generation(self):
-		# password initialization
-		self.pwd = "";
+		"""
+		Generates a password based on the selected options and displays it in the password box.
 
+		Parameters:
+		None
+
+		Returns:
+		None
+		"""
 		# delete all text in password box
 		self.pwd_box.delete("0.0", "end")  
 
-		# option list 
-		option_list = [self.add_uppercase.get(), self.add_lowercase.get(), self.add_number.get(), self.add_symbol.get()]
-
-		# selected option
-		selected_option = [index for index, value in enumerate(option_list) if value]
-		
 		# no option selected
-		if (len(selected_option)==0):
+		if (not(self.add_uppercase.get() or self.add_lowercase.get() or self.add_number.get() or self.add_symbol.get())):
 			# error message
 			self.pwd_len_label.configure(text = "[ERROR] Please select at least one option!", text_color="red", font=self.pwd_label_font)
 			return
 		
 		# password generation
-		for i in range(self.pwd_len):
-			# option 
-			option = random.choice(selected_option)
-			match option:
-				# 0 -> uppercase
-				case 0:
-					self.pwd += random.choice(string.ascii_uppercase)
-				# 1 -> lowercase
-				case 1:
-					self.pwd += random.choice(string.ascii_lowercase)
-				# 2 -> number
-				case 2:
-					self.pwd += str(random.randint(0, 9))
-				# 3 -> symbol
-				case 3:
-					self.pwd += random.choice(self.symbol_string)
-				case _:
-					raise Exception("Invalid option!")
+		characters = ''
+		if self.add_uppercase.get():
+			characters += string.ascii_uppercase
+		if self.add_lowercase.get():
+			characters += string.ascii_lowercase
+		if self.add_number.get():
+			characters += string.digits
+		if self.add_symbol.get():
+			characters += self.symbol_string
+		self.pwd = ''.join(random.choices(characters, k=self.pwd_len))
 
 		# display password
 		self.pwd_box.insert("0.0", self.pwd)
-		# print(f"Password: {self.pwd}")
 
 		# display password length label (so that [ERROR] message won't persist)
 		self.pwd_len_label.configure(text = "Password Length: "+str(self.pwd_len), text_color="white", font=self.pwd_label_font)
 
-		return
+	
